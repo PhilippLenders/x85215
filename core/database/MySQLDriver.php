@@ -10,15 +10,19 @@ class MySQLDriver {
     var $user = "root";
     var $pass = "";
 
+    public function __construct() {
+        $this->log = Logger::getLogger(__CLASS__);
+    }
+
     public function connect() {
         // Create connection
         $conn = new mysqli($this->host, $this->user, $this->pass);
 
         // Check connection
         if ($conn->connect_error) {
-            echo "Connection failed: " . $conn->connect_error;
+            $this->log->info("Connection failed: " . $conn->connect_error);
         } else {
-            echo "Connected successfully";
+            $this->log->info("Connected successfully");
         }
     }
 }
