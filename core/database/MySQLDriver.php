@@ -20,7 +20,7 @@ class MySQLDriver {
 
         // Check connection
         if ($conn->connect_error) {
-            $this->log->info("Connection failed: " . $conn->connect_error);
+            $this->log->error("Connection failed: " . $conn->connect_error);
         } else {
             $this->log->info("Connected successfully");
         }

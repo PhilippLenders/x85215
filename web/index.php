@@ -10,7 +10,7 @@ require_once "../extern/log4php/LoggerMDC.php";
 
 Logger::configure('../log4php.xml');
 LoggerMDC::put("login", "phil");
-$log = Logger::getLogger('default');
+$log = Logger::getLogger("new");
 
 include_once "../core/database/MySQLDriver.php";
 

@@ -5,11 +5,11 @@
             <param name="conversionPattern" value="%date{Y-m-d H:i:s,u} %mdc{login} %level %logger: %message%newline" />
         </layout>
         <param name="file" value="../log/x85215_%s.log" />
-	<param name="datePattern" value="Y-m-d" />
-	<filter class="LoggerFilterLevelRange">
-		<param name="levelMin" value="trace" />
-		<param name="levelMax" value="info" />
-	</filter>
+	    <param name="datePattern" value="Y-m-d" />
+	    <filter class="LoggerFilterLevelRange">
+		    <param name="levelMin" value="trace" />
+		    <param name="levelMax" value="info" />
+    	</filter>
     </appender>
  
     <appender name="errorappender" class="LoggerAppenderDailyFile">
@@ -17,26 +17,22 @@
             <param name="conversionPattern" value="%date{Y-m-d H:i:s,u} %mdc{login} %level %logger: %message%newline" />
         </layout>
         <param name="file" value="../log/x85215_%s.err" />
-	<param name="datePattern" value="Y-m-d" />
-	<filter class="LoggerFilterLevelRange">
-		<param name="levelMin" value="warn" />
-		<param name="levelMax" value="fatal" />
-	</filter>
+    	<param name="datePattern" value="Y-m-d" />
+	    <filter class="LoggerFilterLevelRange">
+		    <param name="levelMin" value="warn" />
+		    <param name="levelMax" value="fatal" />
+	    </filter>
     </appender>
 
-    <logger name="MySQLDriver">
-        <level value="trace" />
-        <appender_ref ref="infoappender" />
-        <appender_ref ref="errorappender" />
-    </logger>
-    
-    <logger name="default">
-        <level value="trace" />
+    <logger name="MySQLDriver" additivity="false">
+        <level value="info" />
         <appender_ref ref="infoappender" />
         <appender_ref ref="errorappender" />
     </logger>
 
     <root>
-        <level value="INFO" />
+        <level value="trace" />
+        <appender_ref ref="infoappender" />
+        <appender_ref ref="errorappender" />
     </root>
 </configuration>
