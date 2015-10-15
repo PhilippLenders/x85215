@@ -23,8 +23,10 @@ $driver = new MySQLDriver();
 <head>
 <meta charset="UTF-8">
 <title>Title of the document</title>
-    <script src="extern/react-0.13.3.js"></script>
+    <script src="extern/react-0.14.0.js"></script>
+    <script src="extern/react-0.14.0-dom.js"></script>
     <script src="extern/babel-5.8.25.browser.js"></script>
+    <script src="extern/jquery-2.1.4.js"></script>
     <style>
         * { font: 12px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
         	color: #333;
@@ -36,13 +38,8 @@ $driver = new MySQLDriver();
 
 <body>
     <?php $driver->connect(); ?>
-    <div id="example"></div>
-    <script type="text/babel">
-        React.render(
-        <h1>Hello, world!</h1>,
-            document.getElementById('example')
-        );
-    </script>
+    <div id="content"></div>
+    <script type="text/babel" src="script/example.js"></script>
 </body>
 
 </html>
