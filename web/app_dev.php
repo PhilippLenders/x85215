@@ -37,15 +37,15 @@ if (count($pathInfo) > 0) {
 
 ?>
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
 <meta charset="UTF-8">
 <title>Title of the document</title>
+    <script src="extern/jquery-2.1.4.js"></script>
     <!-- <script src="extern/react-0.14.0.js"></script>-->
     <!-- <script src="extern/react-0.14.0-dom.js"></script>-->
     <!-- <script src="extern/babel-5.8.25.browser.js"></script>-->
-    <!-- <script src="extern/jquery-2.1.4.js"></script>-->
-    <!-- <script src="extern/angular-1.4.7.js"></script>-->
+    <script src="extern/angular-1.4.7.js"></script>
     <style>
         * { font: 12px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
         	color: #333;
@@ -63,8 +63,14 @@ if (count($pathInfo) > 0) {
             echo 'path: ' + $path;
         }
     ?>
-    <div id="content"></div>
+    <div ng-controller="myController">
+        <input type="text" ng-model="model.name"><br>
+        <span>{{phone}}</span>
+        <span>{{model.name}}</span>
+        <span>{{counter}}</span>
+    </div>
     <!-- <script type="text/babel" src="script/example.js"></script>-->
+    <script src="script/app.js"></script>
 </body>
 
 </html>
